@@ -1,4 +1,4 @@
-# CMake minimum version required to build this project.
+# CMake minimum version required to build this project. cmake -G "MinGW Makefiles" .
 cmake_minimum_required(VERSION 3.10)
 
 # Project name and language.

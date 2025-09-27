@@ -7,9 +7,9 @@ Chainon::Chainon (const std::string & data, Chainon * next):data(data),next(next
 size_t Chainon::length() {
 	size_t len = 0;
 	if (next != nullptr) {
-		len += next->length();
+		return 1 + next->length();
 	}
-	return len;//FAUTE : length(); est retournée aulieu de la valeur de len
+	return 1;//FAUTE : length(); est retournée aulieu de la valeur de len
 }
 
 void Chainon::print (std::ostream & os) const{
