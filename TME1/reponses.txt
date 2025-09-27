@@ -1,0 +1,4 @@
+Exercice 1 :
+question 4)
+quand I attein 0 on a un ovreflow et sa valeur devient 18446744073709551615.
+Les valeurs sont aléatoires dans les cases du tableau.
