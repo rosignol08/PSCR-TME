@@ -1,12 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/TestList.dir/src/List.cpp.obj"
-  "CMakeFiles/TestList.dir/src/List.cpp.obj.d"
-  "CMakeFiles/TestList.dir/src/main.cpp.obj"
-  "CMakeFiles/TestList.dir/src/main.cpp.obj.d"
-  "TestList.exe"
-  "TestList.exe.manifest"
+  "CMakeFiles/TestList.dir/src/List.cpp.o"
+  "CMakeFiles/TestList.dir/src/List.cpp.o.d"
+  "CMakeFiles/TestList.dir/src/main.cpp.o"
+  "CMakeFiles/TestList.dir/src/main.cpp.o.d"
+  "TestList"
   "TestList.pdb"
-  "libTestList.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -13,6 +13,8 @@ char* newcopy (const char *s);
 
 int compare (const char *a, const char *b);
 
+char* newcat (const char *a, const char *b);
+
 }
 
 #endif // STRUTIL_H

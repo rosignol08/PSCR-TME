@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe
+CMAKE_SOURCE_DIR = /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe
+CMAKE_BINARY_DIR = /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe/CMakeFiles /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString/CMakeFiles /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,48 +117,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TestList
+# Target rules for targets named TestString
 
 # Build rule for target.
-TestList: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestList
-.PHONY : TestList
+TestString: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestString
+.PHONY : TestString
 
 # fast build rule for target.
-TestList/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestList.dir/build.make CMakeFiles/TestList.dir/build
-.PHONY : TestList/fast
+TestString/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/build
+.PHONY : TestString/fast
 
-src/List.o: src/List.cpp.o
-.PHONY : src/List.o
+src/String.o: src/String.cpp.o
+.PHONY : src/String.o
 
 # target to build an object file
-src/List.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestList.dir/build.make CMakeFiles/TestList.dir/src/List.cpp.o
-.PHONY : src/List.cpp.o
+src/String.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/String.cpp.o
+.PHONY : src/String.cpp.o
 
-src/List.i: src/List.cpp.i
-.PHONY : src/List.i
+src/String.i: src/String.cpp.i
+.PHONY : src/String.i
 
 # target to preprocess a source file
-src/List.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestList.dir/build.make CMakeFiles/TestList.dir/src/List.cpp.i
-.PHONY : src/List.cpp.i
+src/String.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/String.cpp.i
+.PHONY : src/String.cpp.i
 
-src/List.s: src/List.cpp.s
-.PHONY : src/List.s
+src/String.s: src/String.cpp.s
+.PHONY : src/String.s
 
 # target to generate assembly for a file
-src/List.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestList.dir/build.make CMakeFiles/TestList.dir/src/List.cpp.s
-.PHONY : src/List.cpp.s
+src/String.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/String.cpp.s
+.PHONY : src/String.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestList.dir/build.make CMakeFiles/TestList.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -166,7 +166,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestList.dir/build.make CMakeFiles/TestList.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -174,8 +174,32 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestList.dir/build.make CMakeFiles/TestList.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/strutil.o: src/strutil.cpp.o
+.PHONY : src/strutil.o
+
+# target to build an object file
+src/strutil.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/strutil.cpp.o
+.PHONY : src/strutil.cpp.o
+
+src/strutil.i: src/strutil.cpp.i
+.PHONY : src/strutil.i
+
+# target to preprocess a source file
+src/strutil.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/strutil.cpp.i
+.PHONY : src/strutil.cpp.i
+
+src/strutil.s: src/strutil.cpp.s
+.PHONY : src/strutil.s
+
+# target to generate assembly for a file
+src/strutil.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestString.dir/build.make CMakeFiles/TestString.dir/src/strutil.cpp.s
+.PHONY : src/strutil.cpp.s
 
 # Help Target
 help:
@@ -185,13 +209,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... TestList"
-	@echo "... src/List.o"
-	@echo "... src/List.i"
-	@echo "... src/List.s"
+	@echo "... TestString"
+	@echo "... src/String.o"
+	@echo "... src/String.i"
+	@echo "... src/String.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/strutil.o"
+	@echo "... src/strutil.i"
+	@echo "... src/strutil.s"
 .PHONY : help
 
 

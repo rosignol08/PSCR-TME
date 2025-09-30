@@ -8,6 +8,8 @@
         "${workspaceFolder}/src"
     ],
     "files.associations": {
-        "*.h": "cpp"
+        "*.h": "cpp",
+        "new": "cpp",
+        "string_view": "cpp"
     }
 }

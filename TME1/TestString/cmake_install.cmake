@@ -1,4 +1,4 @@
-# Install script for directory: /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe
+# Install script for directory: /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

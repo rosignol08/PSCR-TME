@@ -19,20 +19,21 @@ public:
     ~String();
 
 // Uncomment as implemented:
-//    String(const String& other); // Copy ctor
+    String(const String& other); // Copy ctor
 //
-//    String& operator=(const String& other); // Copy assign
+    String& operator=(const String& other); // Copy assign
 //
-//    String(String&& other) noexcept; // Move ctor
+    String(String&& other) noexcept; // Move ctor
 //
-//    String& operator=(String&& other) noexcept; // Move assign
+    String& operator=(String&& other) noexcept; // Move assign
 //
-//    bool operator<(const String& other) const; // Member for ordering
+    bool operator<(const String& other) const; // Member for ordering
 //
+    //char* newcat(const char* a, const char* b);//c'etait dans les test j'ai pas compris pourquoi
 //    // Friends
-//    friend std::ostream& operator<<(std::ostream& os, const String& str);
-//    friend bool operator==(const String& a, const String& b); // Symmetric equality
-//    friend String operator+(const String& a, const String& b); // Symmetric concat
+    friend std::ostream& operator<<(std::ostream& os, const String& str);
+    friend bool operator==(const String& a, const String& b); // Symmetric equality
+    friend String operator+(const String& a, const String& b); // Symmetric concat
 
     friend class ::TestString; // For private access in tests
 };

@@ -1,4 +1,7 @@
 Exercice 1 :
 question 4)
-quand I attein 0 on a un ovreflow et sa valeur devient 18446744073709551615.
+quand I atteint 0 on a un overflow et sa valeur devient 18446744073709551615.
 Les valeurs sont aléatoires dans les cases du tableau.
+Exercice 3 :
+question 3)
+On doit refaire le constructeur et les friends et quelques opérateur mais c'est pratique surtout pour les destructeur. c'est mieux pour la mémoire mais dans notre cas on utilise pas beaucoup de string semblables donc peut ếtre unpeu moin adapté

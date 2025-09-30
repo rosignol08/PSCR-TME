@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestListe/src
+CXX_INCLUDES = -I/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME1/TestString/src
 
 CXX_FLAGS = -g -Wall -Wextra -pedantic -O0 -std=c++20
 

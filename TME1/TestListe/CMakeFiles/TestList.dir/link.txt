@@ -1,3 +1,1 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\TestList.dir/objects.a
-C:\ProgramData\mingw64\mingw64\bin\ar.exe qc CMakeFiles\TestList.dir/objects.a @CMakeFiles\TestList.dir\objects1.rsp
-C:\ProgramData\mingw64\mingw64\bin\c++.exe -g -Wall -Wextra -pedantic -O0 -Wl,--whole-archive CMakeFiles\TestList.dir/objects.a -Wl,--no-whole-archive -o TestList.exe -Wl,--out-implib,libTestList.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\TestList.dir\linkLibs.rsp
+/usr/bin/c++ -g -Wall -Wextra -pedantic -O0 CMakeFiles/TestList.dir/src/main.cpp.o CMakeFiles/TestList.dir/src/List.cpp.o -o TestList 
