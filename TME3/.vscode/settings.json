@@ -74,5 +74,6 @@
         "list": "cpp",
         "set": "cpp",
         "cinttypes": "cpp"
-    }
+    },
+    "makefile.makefilePath": "/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME3/build"
 }
