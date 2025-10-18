@@ -28,11 +28,13 @@ void treatImage(FileQueue& fileQueue, const std::filesystem::path& outputFolder)
 }
 
 
-/*
 void reader(FileQueue& fileQueue, ImageTaskQueue& imageQueue) {
     pr::thread_timer timer;
     while (true) {
-     // TODO
+        std::filesystem::path file = fileQueue.pop();
+        if (file == pr::FILE_POISON) break; // poison pill
+        imageQueue[i].image = pr::loadImage(file);
+    
     }
     std::stringstream ss;
     ss << "Thread " << std::this_thread::get_id() << " (reader): " << timer << " ms CPU" << std::endl;

@@ -78,6 +78,31 @@ int main(int argc, char *argv[]) {
 
         // 5. Join the worker thread
         worker.join();
+    }else if (opts.mode == "pipe_mt") {
+        // 1. multi-threaded pipeline: file discovery -> treatImage (load/resize/save)
+        pr::FileQueue fileQueue(10);
+        int nb_travailleurs = 41;
+        std::vector <std::thread> travailleurs;
+        // 2. Start the workers thread
+        for (int i = 0; i < opts.num_threads; ++i){
+            travailleurs.emplace_back(pr::treatImage, std::ref(fileQueue), std::ref(opts.outputFolder));
+            //std::thread worker(pr::treatImage, std::ref(fileQueue), std::ref(opts.outputFolder));
+        }
+
+        // 3. Populate file queue synchronously
+        pr::findImageFiles(opts.inputFolder, [&](const std::filesystem::path& file) {
+            fileQueue.push(file);
+        });
+
+        // 4. Push poison pill
+        for (int i = 0; i < opts.num_threads; ++i){
+            fileQueue.push(pr::FILE_POISON);
+        }
+        // 5. Join the worker thread
+        
+        for (int i = 0; i < opts.num_threads; ++i){
+            travailleurs[i].join();
+        }
     } else {
         std::cerr << "Unknown mode '" << opts.mode << "'. Supported modes: resize, pipe" << std::endl;
         return 1;
@@ -111,7 +136,7 @@ int parseOptions(int argc, char *argv[], Options& opts) {
         ->default_str(default_opts.outputFolder.string());
 
     cli_app.add_option("-m,--mode", opts.mode, "Processing mode")
-        ->check(CLI::IsMember({"resize", "pipe" /*, "pipe_mt" */})) // TODO : add modes
+        ->check(CLI::IsMember({"resize", "pipe" , "pipe_mt"})) // TODO : add modes
         ->default_str(default_opts.mode);
 
     cli_app.add_option("-n,--nthreads", opts.num_threads, "Number of threads")
