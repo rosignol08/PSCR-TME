@@ -113,21 +113,20 @@ Best: 8 ?
 
 ```cpp
 struct TaskData {
-... choix adopté
+    QImage image;
+    std::filesystem::path chemin;
 };
+BoundedBlockingQueue<TaskData*>;
 ```
 
-Fields: QImage ??? for the image data, ...
-
-Use ??? for QImage, because ...
-
-TASK_POISON: ...def...
+Avec des pointeur c'est plus rapide 
 
 ## Question 7: ImageTaskQueue typing
 
 pointers vs values
 
-Choose BoundedBlockingQueue<TaskData???> as consequence
+Je choisis les pointeur car on a pas besoin de tout recopier à chaque modification mais faut new de delete.
+Ducoup const TaskData* TASK_POISON = nullptr; c'est un pointeur null.
 
 ## Question 8: Pipeline functions
 
@@ -140,7 +139,15 @@ Termination: Main pushes the appropriate number of poisons after joining the pre
 Measurements: 
 ```
 ./build/TME4 -m mt_pipeline -i input_images -o output_images
-...
+Image resizer starting with input folder 'input_images', output folder 'output_images', mode 'mt_pipeline', nthreads 4
+Thread 129863453243072 (reader): 4672 ms CPU
+Thread 129863444850368 (resizer): 180 ms CPU
+Thread 129863436457664 (saver): 905 ms CPU
+Thread 129863495383360 (main): 4 ms CPU
+Total runtime (wall clock): 4791 ms
+Memory usage: Resident: 98.3 MB, Peak: 187 MB
+Total CPU time across all threads: 5761 ms
+
 ```
 
 

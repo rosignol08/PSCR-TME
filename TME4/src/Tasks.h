@@ -11,15 +11,18 @@ using FileQueue = BoundedBlockingQueue<std::filesystem::path>;
 
 const std::filesystem::path FILE_POISON{};
 
+
 // load/resize/save 
 void treatImage(FileQueue& fileQueue, const std::filesystem::path& outputFolder);
 
-using ImageTaskQueue = BoundedBlockingQueue<TaskData*>;
 
 struct TaskData {
     QImage image;
     std::filesystem::path chemin;
 };
+using ImageTaskQueue = BoundedBlockingQueue<TaskData*>;
+
+extern TaskData* TASK_POISON;
 
 // or
 //using ImageTaskQueue = BoundedBlockingQueue<TaskData>;
