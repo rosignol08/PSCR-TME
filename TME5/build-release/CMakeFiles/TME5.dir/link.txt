@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -Wall -DNDEBUG -flto CMakeFiles/TME5.dir/src/main.cpp.o CMakeFiles/TME5.dir/src/util/mtrand.cpp.o -o TME5 

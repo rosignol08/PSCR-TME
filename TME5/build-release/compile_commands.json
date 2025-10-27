@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/build-release",
+  "command": "/usr/bin/c++  -I/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/src -O3 -Wall -DNDEBUG -flto -std=c++20 -o CMakeFiles/TME5.dir/src/main.cpp.o -c /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/src/main.cpp",
+  "file": "/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/src/main.cpp",
+  "output": "CMakeFiles/TME5.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/build-release",
+  "command": "/usr/bin/c++  -I/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/src -O3 -Wall -DNDEBUG -flto -std=c++20 -o CMakeFiles/TME5.dir/src/util/mtrand.cpp.o -c /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/src/util/mtrand.cpp",
+  "file": "/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/src/util/mtrand.cpp",
+  "output": "CMakeFiles/TME5.dir/src/util/mtrand.cpp.o"
+}
+]
