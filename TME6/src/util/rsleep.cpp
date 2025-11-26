@@ -7,7 +7,7 @@ void pr::randsleep() {
   tosleep.tv_sec = 0;
   // 300 millions de ns = 0.3 secondes
   // 1 milliard de ns = 1 seconde
-  tosleep.tv_nsec = pr::mtrand(3000000, 10000000);
+  tosleep.tv_nsec = pr::mtrand(300000000, 1000000000);
   struct timespec remain;
   while (nanosleep(&tosleep, &remain) != 0) {
     tosleep = remain;

@@ -2,6 +2,7 @@
 #include <signal.h>
 #include <sys/wait.h>
 #include "util/rsleep.h"
+#include <unistd.h>
 
 using namespace std;
 
@@ -21,9 +22,14 @@ pid_t luke_pid;
 static pid_t adversaire_actuel;
 
 void handler_attaque(int sig) {
-    printf("Processus %d reçoit une attaque!\n", getpid());
+    //printf("Processus %d reçoit une attaque!\n", getpid());
     PV = PV - 1;
     //kill(getpid(), SIGUSR1); //renvoie une attaque à l'adversaire
+}
+
+void handler_parade(int sig) {
+    const char msg[] = "coup pare\n";
+    write(STDOUT_FILENO, msg, sizeof(msg)-1);
 }
 
 void init_handler(){
@@ -34,28 +40,64 @@ void init_handler(){
 }
 
 void attaque (pid_t adversaire){
-    //configure le handler pour recevoir les attaques
-    //sigemptyset(&sa.sa_mask);
-    //adversaire_actuel = adversaire;
-    //sa.sa_handler = &handler_attaque;
-    //sigaction(SIGUSR1, &sa, NULL);
-    //init_handler();
+    //config du handler pour recevoir les attaques
+    struct sigaction sa_atk;
+    sigemptyset(&sa_atk.sa_mask);
+    sa_atk.sa_handler = handler_attaque;
+    sa_atk.sa_flags = 0;
+    sigaction(SIGUSR1, &sa_atk, NULL);
+
+    //attaque
+    if (kill(adversaire, SIGUSR1) == -1) {
+       //erreur ou victoire
+    }
     
     //envoie une attaque à l'adversaire
-    printf("Processus %d attaque %d\n", getpid(), adversaire);
-    kill(adversaire, SIGUSR1);
+    //printf("Processus %d attaque %d\n", getpid(), adversaire);
+    //kill(adversaire, SIGUSR1);
+    pr::randsleep();
 }
 
 // La phase de défense consiste à désarmer le signal SIGUSR1 en positionnant son action à SIG_IGN ;
 // Ensuite le processus s'endort pour une durée aléatoire
 void defense(){
-    signal(SIGUSR1, SIG_IGN);
+    struct sigaction sa_def;
+    sa_def.sa_handler = SIG_IGN;
+    sigemptyset(&sa_def.sa_mask);
+    sa_def.sa_flags = 0;
+    sigaction(SIGUSR1, &sa_def, NULL);
+    
     pr::randsleep();
-    // Réactive le handler après la défense
+}
+
+void defenseLuke() {
+    // 1. Positionner le handler "coup paré" [cite: 61]
+    struct sigaction sa;
+    sa.sa_handler = handler_parade;
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = 0;
-    sa.sa_handler = &handler_attaque;
-    sigaction(SIGUSR1, &sa, NULL);    
+    sigaction(SIGUSR1, &sa, NULL);
+
+    // 2. Masquer le signal SIGUSR1 [cite: 62]
+    // Cela empêche le signal d'interrompre le sommeil immédiatement
+    sigset_t mask_bloque, mask_orig;
+    sigemptyset(&mask_bloque);
+    sigaddset(&mask_bloque, SIGUSR1);
+    sigprocmask(SIG_BLOCK, &mask_bloque, &mask_orig);
+
+    // 3. Dormir (pendant ce temps, si un signal arrive, il reste "en attente") [cite: 63]
+    pr::randsleep();
+
+    // 4. Suspendre pour tester l'attaque [cite: 64]
+    // sigsuspend remplace temporairement le masque par un masque vide (ici mask_orig qui ne contient pas USR1)
+    // Si une attaque a eu lieu pendant le sleep, le handler s'exécute IMMÉDIATEMENT et sigsuspend rend la main.
+    // Sinon, on attend l'attaque.
+    sigset_t mask_vide;
+    sigemptyset(&mask_vide); 
+    sigsuspend(&mask_vide); 
+
+    // 5. Restaurer le masque d'origine [cite: 65]
+    sigprocmask(SIG_SETMASK, &mask_orig, NULL);
 }
 
 void combat(pid_t adversaire){
@@ -79,8 +121,13 @@ void combat(pid_t adversaire){
             exit(0);
         }
     
+        if (getpid() == vador_pid) {
+            defense();//vador : défense classique
+        } else {
+            defenseLuke();//luke défense question 4
+        }
+
         attaque(adversaire);
-        defense();
         //attaque et defense 
         if (getpid() == vador_pid){
             cout << "score : " << PV << " vador" << endl;
