@@ -49,14 +49,14 @@ public:
     LineJob (const Scene& scene, Image& img, int y)
     : scene(scene), img(img), y(y) {}
     void run() override {
-        const Scene::screen_t& screen = scene.getScreenPoints();
+        const Scene::screen_t& screen = scene.getScreenPoints(); //la scene
         int width = scene.getWidth();
 
-        for (int x = 0; x < width; ++x) {
+        for (int x = 0; x < width; ++x) {//pr chaque lignes
             const auto& screenPoint = screen[y][x];
             Ray ray(scene.getCameraPos(), screenPoint);
 
-            int targetSphere = scene.findClosestInter(ray);
+            int targetSphere = scene.findClosestInter(ray);//l'obj le plus proche
             if (targetSphere == -1) continue;
 
             const Sphere& obj = scene.getObject(targetSphere);
