@@ -25,6 +25,10 @@ Avec 200 * 200 :
 
 Total time 1331ms.
 
+Avec Ryzen 3 3100 4 core 8 threads.
+./TME5 -mThreadPerPixel -W 200 -H 200 -n 8
+Ray tracer starting with output 'spheres.bmp', resolution 200x200, spheres 250, mode ThreadPerPixel
+Total time 1535ms.
 
 ### Question 4
 Implemented `void renderThreadPerRow(const Scene& scene, Image& img)` in Renderer.
@@ -34,6 +38,12 @@ en 200 * 200
 
 Total time 268ms.
 
+Avec Ryzen 3 3100 4 core 8 threads.
+./TME5 -mThreadPerRow -W 200 -H 200 -n 8
+Ray tracer starting with output 'spheres.bmp', resolution 200x200, spheres 250, mode ThreadPerRow
+Total time 9ms.
+
+
 ### Question 5
 Implemented `void renderThreadManual(const Scene& scene, Image& img, int nbthread)` in Renderer.
 
@@ -41,6 +51,11 @@ mode ThreadManual 200 * 200
 
 Total time 208ms.
 
+Avec Ryzen 3 3100 4 core 8 threads.
+
+./TME5 -mThreadManual -W 200 -H 200 -n 8
+Ray tracer starting with output 'spheres.bmp', resolution 200x200, spheres 250, mode ThreadManual, threads 8
+Total time 6ms.
 
 ## With Thread Pool
 
@@ -62,6 +77,13 @@ mode PoolPixel, threads 4
 
 Total time 234ms.
 
+Avec Ryzen 3 3100 4 core 8 threads.
+
+./TME5 -mPoolPixel -W 200 -H 200 -n 8
+Ray tracer starting with output 'spheres.bmp', resolution 200x200, spheres 250, mode PoolPixel, threads 8
+Total time 45ms.
+
+
 ### Question 9
 LineJob: derives from Job, captures TODO
 
@@ -72,7 +94,12 @@ Total time 208ms.
 
 Mode "-m PoolRow -n nbthread".
 
-mesures
+Avec Ryzen 3 3100 4 core 8 threads.
+
+./TME5 -mPoolRow -W 200 -H 200 -n 8
+Ray tracer starting with output 'spheres.bmp', resolution 200x200, spheres 250, mode PoolRow, threads 8
+Total time 6ms.
+
 
 ### Question 10
 Best:

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5
+CMAKE_SOURCE_DIR = /home/serveur-ro/Documents/PSCR-TME/TME5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/build-release
+CMAKE_BINARY_DIR = /home/serveur-ro/Documents/PSCR-TME/TME5/build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/build-release/CMakeFiles /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/build-release//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/serveur-ro/Documents/PSCR-TME/TME5/build-release/CMakeFiles /home/serveur-ro/Documents/PSCR-TME/TME5/build-release//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME5/build-release/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/serveur-ro/Documents/PSCR-TME/TME5/build-release/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
