@@ -1,4 +1,5 @@
 # PSCR-TME
+Nouveau repo : https://github.com/rosignol08/PSCR_TME26
 
 Provided lab files for PSCR MU4IN400 course.
 
