@@ -1,0 +1,1 @@
+/usr/bin/g++ -O0 -g -Wall CMakeFiles/server2.dir/src/server2.cpp.o CMakeFiles/server2.dir/src/TCPServer.cpp.o CMakeFiles/server2.dir/src/ServerSocket.cpp.o CMakeFiles/server2.dir/src/Socket.cpp.o -o server2  -lpthread 

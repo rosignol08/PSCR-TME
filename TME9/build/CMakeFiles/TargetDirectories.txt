@@ -1,0 +1,5 @@
+/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME9/build/CMakeFiles/client.dir
+/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME9/build/CMakeFiles/server.dir
+/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME9/build/CMakeFiles/server2.dir
+/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME9/build/CMakeFiles/edit_cache.dir
+/home/romaric/Documents/cours_M1/M1_S1/PSCR/PSCR-TME/TME9/build/CMakeFiles/rebuild_cache.dir

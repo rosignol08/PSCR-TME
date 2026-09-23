@@ -1,0 +1,1 @@
+/usr/bin/g++ -O0 -g -Wall CMakeFiles/client.dir/src/client.cpp.o CMakeFiles/client.dir/src/Socket.cpp.o -o client  -lpthread 
